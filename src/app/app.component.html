@@ -1,0 +1,16 @@
+<app-header (clear)="clearAll()"
+(selectedClear)="clearSelected()"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+      <app-create-task (taskCreator)="getTask($event)"></app-create-task>
+      <hr>
+      <h1 style="font-family: 'Exo 2', sans-serif;">You Have {{taskListLength}} Tasks</h1>
+
+      <app-tasks *ngFor="let task of taskList,let i=index"
+      [currentTask]="task"
+      (deleteInit)="onDeleteTask(i)"
+      (completeInit)="onCompleteTask(i)" ></app-tasks>
+    </div>
+  </div>
+</div>

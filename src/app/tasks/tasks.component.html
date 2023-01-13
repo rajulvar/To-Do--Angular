@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <h3>{{ currentTask.taskName }} <input type="checkbox" [(ngModel)]="isChecked" (change)="isCheckValue($event)"></h3>
+    <hr>
+    <p >{{currentTask.taskType}}</p>
+    <p style="font-family: 'Exo 2', sans-serif;"> Task assigned on {{currentTask.assignedDate}}</p>
+    <app-edit-task *ngIf="editorMode"
+                   [taskToEdit]="currentTask"
+                   (edited)="editCompleted()"></app-edit-task>
+    <div class="col-lg-4">
+      <a href="#" (click)="onEdit()"><button class="btn btn-primary" >Edit</button></a>
+    </div>
+    <div class="col-lg-4">
+      <a href="#" (click)="onDelete()"><button class="btn btn-danger">Delete</button></a>
+    </div>
+  </div>
+</div>
+
+

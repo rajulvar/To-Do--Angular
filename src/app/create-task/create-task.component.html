@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <form>
+      <div class="form-group">
+        <label for="task">Task Name</label>
+        <input type="text" class="form-control" id="task" placeholder="Enter Your Task" [(ngModel)]="taskName" [ngModelOptions]="{standalone: true}">
+        <div class="form-group">
+          <label for="description">Task Description</label>
+<!--          <select class="form-control" id="sel" [(ngModel)]="taskType" [ngModelOptions]="{standalone: true}">-->
+<!--            <option value="urgent">Urgent</option>-->
+<!--            <option value="regular">Regular</option>-->
+<!--          </select>-->
+          <input type="text" id="description" class="form-control" [(ngModel)]="taskType" [ngModelOptions]="{standalone: true}" placeholder="Describe/ Mention Imp. Points">
+        </div>
+        <label for="date">Date and Time of Creation</label><br>
+        <input type="datetime-local" id="date" placeholder="Date of creation" [(ngModel)]="dateAndTime" [ngModelOptions]="{standalone: true}">
+      </div>
+<!--      <div class="form-check">-->
+<!--        <input type="checkbox" class="form-check-input" [(ngModel)]="checked" [ngModelOptions]="{standalone: true}" value="true">-->
+<!--        <label class="form-check-label" > I promise, I will complete this task........</label>-->
+<!--      </div>-->
+      <button type="submit" class="btn btn-success" [disabled]=" dateAndTime==='' && taskName===''&& taskType===''" (click)="onCreate()">Create</button>
+      <h4 style="font-family: 'Exo 2', sans-serif;">“Don't settle for average. Bring your best to the moment. Then, whether it fails or succeeds, at least you know you gave all you had.” —<i>Angela Bassett</i></h4>
+    </form>
+  </div>
+</div>
+
+
+
